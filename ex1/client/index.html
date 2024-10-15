@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output.css" />
+    <title>Login</title>
+  </head>
+  <body class="h-screen v-screen flex justify-center">
+    <div class="flex items-center flex-col gap-4 justify-center">
+      <h1 class="text-4xl font-bold">Login</h1>
+      <form onsubmit="login()" method="dialog">
+        <div class="relative my-4">
+          <input
+            type="text"
+            id="username"
+            class="input input-colors peer"
+            placeholder=" "
+          />
+          <label
+            for="username"
+            id="labelUser"
+            class="label label-colors peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            >Usuário</label
+          >
+        </div>
+        <div class="relative">
+          <input
+            type="password"
+            id="password"
+            class="input input-colors peer"
+            placeholder=" "
+          />
+          <label
+            for="password"
+            id="labelPassword"
+            class="label label-colors peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            >Senha</label
+          >
+        </div>
+        <div class="my-3">
+          <span id="confirmationText" class="font-md"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
