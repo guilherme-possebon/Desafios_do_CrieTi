@@ -15,7 +15,7 @@ export function Home() {
   const [patinetes, setPatinetes] = useState<PatineteType[]>([]);
 
   const getAllPatinetes = async () => {
-    const result = await patinetesApi.getAllPatinetes();
+    const result = await patinetesApi.getAllPatinetes(false);
 
     setPatinetes(result);
   };

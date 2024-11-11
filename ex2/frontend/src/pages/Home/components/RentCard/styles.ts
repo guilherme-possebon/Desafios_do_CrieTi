@@ -44,7 +44,7 @@ export const HintWrapper = styled.div`
 export const Button = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
-  background-color: ${({ $clickable }) => ($clickable ? "#4CAF50" : "#ccc")};
+  background-color: ${({ $clickable }) => ($clickable ? "#4CAF50" : "#8d8686")};
   color: #fff;
   padding: 10px 20px;
   border: none;

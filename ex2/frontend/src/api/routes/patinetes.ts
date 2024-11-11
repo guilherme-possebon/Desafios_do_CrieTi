@@ -4,9 +4,9 @@ interface PatineteInterface {
   locado: boolean;
 }
 
-const getAllPatinetes = async () => {
+const getAllPatinetes = async (locado: boolean) => {
   try {
-    const response = await api.get("/patinetes/");
+    const response = await api.get(`/patinetes/${locado}`);
     return response.data;
   } catch (error: unknown) {
     if (error instanceof Error) {
