@@ -40,7 +40,27 @@ export const createPatinete = async (req: Request, res: Response) => {
 // GET: Get all Patinetes
 export const getPatinetes = async (_req: Request, res: Response) => {
   try {
-    const patinetes = await patineteRepository.find();
+    const locado = _req.params.locado;
+
+    let validatedLocado: boolean = false;
+
+    if (locado == "true") {
+      validatedLocado = true;
+    } else if (locado == "false") {
+      validatedLocado = false;
+    } else {
+      res.status(500).json({ message: "Send true or false" });
+      return;
+    }
+
+    const patinetes = await patineteRepository.find({
+      where: {
+        locado: validatedLocado,
+      },
+      order: {
+        id: "ASC",
+      },
+    });
     res.json(patinetes);
     return;
   } catch (error) {

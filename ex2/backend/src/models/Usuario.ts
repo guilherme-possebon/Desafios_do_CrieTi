@@ -7,7 +7,7 @@ export class Usuario {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column()
   cpf: string;
 
   @Column()
