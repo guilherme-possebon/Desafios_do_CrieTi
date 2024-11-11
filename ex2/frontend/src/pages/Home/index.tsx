@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { patinetesApi } from "../../api/routes/patinetes";
 import { RentCard } from "./components/RentCard";
 import { PatineteContainer } from "./styles";
+import Swal from "sweetalert2";
 
 type PatineteType = {
   id: number;
@@ -20,12 +21,23 @@ export function Home() {
     setPatinetes(result);
   };
 
-  const updateLocadoStatus = (id: number) => {
-    setPatinetes((prevState) =>
-      prevState.map((patinete) =>
-        patinete.id === id ? { ...patinete, locado: true } : patinete
-      )
-    );
+  const handleRent = (id: number) => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      },
+    });
+    Toast.fire({
+      icon: "success",
+      title: `Patinite número ${id} alugado com sucesso!`,
+    });
+    getAllPatinetes();
   };
 
   useEffect(() => {
@@ -42,7 +54,7 @@ export function Home() {
               key={patinete.id}
               locado={patinete.locado}
               id={patinete.id}
-              onRent={updateLocadoStatus}
+              onRent={handleRent}
             />
           ) : null
         )}
