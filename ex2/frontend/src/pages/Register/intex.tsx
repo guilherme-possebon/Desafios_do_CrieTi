@@ -40,11 +40,9 @@ export function Register() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    console.log(user);
 
     try {
-      const response = await userApi.registerUser(user);
-      console.log(response);
+      await userApi.registerUser(user);
       setSuccessAlert(true);
       setError("");
     } catch (err: unknown) {

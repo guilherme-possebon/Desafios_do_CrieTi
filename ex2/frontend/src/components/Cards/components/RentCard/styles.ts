@@ -1,8 +1,4 @@
-import styled, { css } from "styled-components";
-
-interface ButtonProps {
-  $clickable: boolean;
-}
+import styled from "styled-components";
 
 export const CardContainer = styled.div`
   display: flex;
@@ -41,24 +37,20 @@ export const HintWrapper = styled.div`
   }
 `;
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button`
   display: flex;
   align-items: center;
-  background-color: ${({ $clickable }) => ($clickable ? "#4CAF50" : "#8d8686")};
+  background-color: #4caf50;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  cursor: ${({ $clickable }) => ($clickable ? "pointer" : "not-allowed")};
+  cursor: pointer;
   transition: background-color 0.3s ease;
 
-  ${({ $clickable }) =>
-    $clickable &&
-    css`
-      &:hover {
-        background-color: #45a049;
-      }
-    `}
+  &:hover {
+    background-color: #45a049;
+  }
 `;
 
 export const PadlockIcon = styled.span`

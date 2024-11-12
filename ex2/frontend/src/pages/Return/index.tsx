@@ -1,7 +1,10 @@
+import { Cards } from "../../components/Cards";
+
 export function Return() {
   return (
     <>
-      <div></div>
+      <div>Return</div>
+      <Cards isLocado={true} />
     </>
   );
 }
