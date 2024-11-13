@@ -1,10 +1,13 @@
 import { Cards } from "../../components/Cards";
+import { ReturnContainer } from "./styles";
 
 export function Return() {
   return (
     <>
-      <div>Return</div>
-      <Cards isLocado={true} />
+      <ReturnContainer>
+        <h1>Devolver patinete</h1>
+        <Cards isLocado={true} />
+      </ReturnContainer>
     </>
   );
 }

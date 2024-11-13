@@ -1,5 +1,6 @@
 import { api } from "../axios/axios";
-interface PatineteInterface {
+
+export interface PatineteInterface {
   funcionando?: boolean;
   locado: boolean;
 }
@@ -30,6 +31,15 @@ const updatePatinete = async (id: number, patinete: PatineteInterface) => {
   }
 };
 
+export const postPatinete = async () => {
+  const patinete: PatineteInterface = {
+    funcionando: true,
+    locado: false,
+  };
+  const response = await api.post(`/patinetes/`, patinete);
+  return response.data;
+};
+
 export const getPatineteById = async (id: number) => {
   const response = await api.get(`/patinetes/${id}`);
   return response.data;
@@ -39,4 +49,5 @@ export const patinetesApi = {
   getAllPatinetes,
   updatePatinete,
   getPatineteById,
+  postPatinete,
 };

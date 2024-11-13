@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const PatineteContainer = styled.div`
+export const HomeContainer = styled.div`
   display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
 `;

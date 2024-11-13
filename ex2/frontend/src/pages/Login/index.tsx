@@ -22,7 +22,6 @@ export function Login() {
 
   const submitForm = (data: LoginFormData) => {
     console.log(data);
-    // Replace with your API call or login logic
   };
 
   return (
